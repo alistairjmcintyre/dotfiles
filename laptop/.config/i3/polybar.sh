@@ -10,3 +10,4 @@ compton &
 # Launch polybar
 polybar dummy &
 polybar top &
+polybar bottom &

@@ -57,6 +57,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+F1 exec "~/.screenlayout/work-docked.sh"
 bindsym $mod+Shift+F2 exec "~/.screenlayout/undocked.sh"
 bindsym $mod+Shift+F3 exec "~/.screenlayout/home-docked.sh"
+bindsym $mod+Shift+F4 exec "~/.screenlayout/presentation.sh"
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
 
