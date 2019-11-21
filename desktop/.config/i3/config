@@ -156,6 +156,8 @@ exec_always feh --bg-fill ~/wallpaper.jpg*
 # Enable whatever my GNOME config is set to
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
+for_window [class="Spotify"] move to workspace $ws2
+
 exec --no-startup-id i3-msg "workspace 1; append_layout ~/.config/i3/ws-email.json"
 exec --no-startup-id evolution
 exec --no-startup-id gnome-calendar
