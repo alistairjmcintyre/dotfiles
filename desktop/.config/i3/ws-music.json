@@ -15,13 +15,12 @@
                "x": 0,
                "y": 0
             },
-            "name": "Spotify",
-            "percent": 0.8,
+            "name": "Spotify Premium",
+            "percent": 0.75,
             "swallows": [
                {
                "class": "^Spotify$",
-               "instance": "^spotify$",
-                "title": "^Spotify\\ Premium\\$"
+               "instance": "^spotify$"
                }
             ],
             "type": "con"
@@ -30,38 +29,9 @@
             "border": "normal",
             "floating": "auto_off",
             "layout": "splitv",
-            "percent": 0.2,
+            "percent": 0.25,
             "type": "con",
             "nodes": [
-                {
-                    "border": "normal",
-                    "floating": "auto_off",
-                    "layout": "splith",
-                    "percent": 0.5,
-                    "type": "con",
-                    "nodes": [
-                        {
-                            "border": "pixel",
-                            "current_border_width": 0,
-                            "floating": "auto_off",
-                            "geometry": {
-                               "height": 1348,
-                               "width": 1137,
-                               "x": 1151,
-                               "y": 46
-                            },
-                            "name": "Bluetooth Devices",
-                            "percent": 1,
-                            "swallows": [
-                               {
-                               "class": "^Blueman\\-manager$",
-                               "instance": "^blueman\\-manager$"
-                               }
-                            ],
-                            "type": "con"
-                        }
-                    ]
-                },
                 {
                     "border": "pixel",
                     "current_border_width": 0,
@@ -78,6 +48,26 @@
                        {
                        "class": "^Pavucontrol$",
                        "instance": "^pavucontrol$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1348,
+                       "width": 1137,
+                       "x": 1151,
+                       "y": 46
+                    },
+                    "name": "Bluetooth Devices",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       "class": "^Blueman\\-manager$",
+                       "instance": "^blueman\\-manager$"
                        }
                     ],
                     "type": "con"

@@ -44,7 +44,7 @@ offset-y = 0.75%
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 2
 line-color = #f00
 
 border-size = 0
@@ -57,9 +57,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-1 = Fira Code:fontformat=truetype:size=8:antialias=false;1
-font-2 = Fira Code:pixelsize=8;1
-font-3 = Ubuntu Mono:style=Solid:size=10;2
+font-1 = Noto Sans:fontformat=truetype:size=8:antialias=false;1
+font-2 = Noto Sans:size=8;1
+font-3 = Noto Sans:style=Solid:size=10;2
 font-4 = Noto Sans:style=Solid:size=10;2
 
 modules-left = i3
@@ -94,7 +94,7 @@ offset-y = 0.75%
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 2
 line-color = #f00
 
 border-size = 0
@@ -108,8 +108,8 @@ module-margin-right = 1
 
 font-0 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-1 = Fira Code:fontformat=truetype:size=8:antialias=false;1
-font-2 = Fira Code:pixelsize=8;1
-font-3 = Ubuntu Mono:style=Solid:size=10;2
+font-2 = Noto Sans:pixelsize=8;1
+font-3 = Noto Sans:style=Solid:size=10;2
 font-4 = Noto Sans:style=Solid:size=10;2
 
 modules-left = dock eth wifi vpn
@@ -188,7 +188,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #FD971F
-label = "CPU: %percentage:2%% "
+label = " CPU: %percentage:2%%  "
 label-font = 4
 
 [module/memory]
@@ -197,7 +197,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #A6E22E
-label = "Mem: %percentage_used%% "
+label = " Mem: %percentage_used%%  "
 label-font = 4
 
 
@@ -209,7 +209,7 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = "Ethernet: %local_ip% "
+label-connected = " Ethernet: %local_ip%  "
 label-connected-font = 4
 
 [module/vpn]
@@ -259,7 +259,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date = %d %B %Y
+date = %A, %d %B %Y
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -269,7 +269,7 @@ format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-overline = #66D9EF
 
-label = " %date% %time% "
+label = " %date% %time%  "
 label-font = 4
 
 [module/pulseaudio]
@@ -310,8 +310,8 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = "Temp: %temperature-c% "
-label-warn = "Temp: %temperature-c% "
+label = " Temp: %temperature-c%  "
+label-warn = " Temp: %temperature-c%  "
 label-warn-foreground = ${colors.secondary}
 label-font = 4
 label-warn-font = 4
