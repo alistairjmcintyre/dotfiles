@@ -52,7 +52,7 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
@@ -146,14 +146,15 @@ bindsym $mod+r mode "resize"
 for_window [class=".*"] border pixel 0
 
 gaps inner 10
-gaps outer 10
+gaps vertical -5
+gaps horizontal 10
 
 # Enable compositor
 exec compton &
 # Enable polybar
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Set wallpaper
-exec_always feh --bg-fill ~/wallpaper.jpg*
+exec_always feh --bg-fill ~/wallpaper.png*
 # Enable whatever my GNOME config is set to
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 

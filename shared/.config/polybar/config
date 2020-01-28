@@ -17,12 +17,12 @@
 ;==========================================================
 
 [colors]
-background = #aa555555
+background = #00ffffff
 ;background = #aad2d2d2
-foreground-alt = #444444
-foreground = #ccdfdfdf
-background-alt = #aa555555
-secondary = #aa66D9EF
+foreground-alt = #aa999999
+foreground = #cc3d3d3d
+background-alt = #00555555
+secondary = #a66D9EF
 primary = #aa66D9EF
 alert = #aa66D9EF
 transparent = #00000000
@@ -57,16 +57,16 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-1 = Noto Sans:fontformat=truetype:size=8:antialias=false;1
-font-2 = Noto Sans:size=8;1
-font-3 = Noto Sans:style=Solid:size=10;2
-font-4 = Noto Sans:style=Solid:size=10;2
+font-1 = Lato Heavy:fontformat=truetype:size=8:antialias=false;1
+font-2 = Lato Heavy:size=8;1
+font-3 = Lato Heavy:style=Solid:size=10;2
+font-4 = Lato Heavy:style=Solid:size=10;2
 
 modules-left = i3
 modules-center = player-mpris-tail
 modules-right = date
 
-tray-position = left
+tray-position = none
 tray-padding = 5
 tray-background = ${colors.background}
 tray-transparent = true
@@ -107,17 +107,32 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-1 = Fira Code:fontformat=truetype:size=8:antialias=false;1
-font-2 = Noto Sans:pixelsize=8;1
-font-3 = Noto Sans:style=Solid:size=10;2
-font-4 = Noto Sans:style=Solid:size=10;2
+font-1 = Lato Heavy:fontformat=truetype:size=8:antialias=false;1
+font-2 = Lato Heavy:size=8;2
+font-3 = Lato Heavy:style=Solid:size=10;2
+font-4 = Lato Heavy:style=Solid:size=10;2
 
 modules-left = dock eth wifi vpn
-modules-center = pulseaudio
-modules-right = memory cpu temperature battery1 battery2
+modules-center = 
+modules-right = pavolume memory cpu temperature battery1 battery2
 
 cursor-click = default
 cursor-scroll = default
+
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-underline = #FD971F
+label-font = 4
 
 [module/player-mpris-tail]
 type = custom/script
@@ -284,11 +299,11 @@ label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 100
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #228822
+bar-volume-foreground-1 = #228822
+bar-volume-foreground-2 = #228822
+bar-volume-foreground-3 = #228822
+bar-volume-foreground-4 = #228822
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = true
