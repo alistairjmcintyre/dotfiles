@@ -20,7 +20,7 @@
 background = #00ffffff
 ;background = #aad2d2d2
 foreground-alt = #aa999999
-foreground = #cc3d3d3d
+foreground = #dd5d5d5d
 background-alt = #00555555
 secondary = #a66D9EF
 primary = #aa66D9EF
@@ -394,8 +394,8 @@ adapter = ADP1
 ;
 ; Default: 5
 poll-interval = 5
-label-charging = " B1: %percentage%% ++ "
-label-discharging = " B1: %percentage%% -- "
+label-charging = " Int: %percentage%% ++ "
+label-discharging = " Int: %percentage%% -- "
 format-charging = <label-charging>
 label-charging-underline = #f50a4d
 format-discharging = <label-discharging>
@@ -424,8 +424,8 @@ adapter = ADP1
 ;
 ; Default: 5
 poll-interval = 5
-label-charging = " B2: %percentage%% ++ "
-label-discharging = " B2: %percentage%% -- "
+label-charging = " Ext: %percentage%% ++ "
+label-discharging = " Ext: %percentage%% -- "
 format-charging = <label-charging>
 label-charging-underline = #f50a4d
 format-discharging = <label-discharging>
