@@ -29,17 +29,17 @@ transparent = #00000000
 selected-workspace = #66D9EF
 
 [bar/top]
-width = 100%
+width = 100%:-40
 height = 26
 radius = 1.0
 fixed-center = true
-override-redirect = false
+override-redirect = true
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 wm-restack = i3
-offset-x = 0.5%
-offset-y = 5.75%
+offset-x = 20
+offset-y = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,8 +47,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-size = 3
-border-color = #00000000
+border-bottom-size = 1
+border-bottom-color = #ff000000
 
 padding-left = 1
 padding-right = 1
@@ -64,7 +64,8 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:size=10;2
 
 modules-left = i3
 modules-center = player-mpris-tail
-modules-right = pavolume memory cpu temperature battery1 battery2 date dock eth wifi vpn
+;modules-right = pavolume memory cpu temperature battery1 battery2 date dock eth wifi vpn
+modules-right = pavolume memory cpu temperature date
 
 tray-position = none
 tray-padding = 5
@@ -114,7 +115,8 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:size=10;2
 
 modules-left = dock eth wifi vpn
 modules-center = 
-modules-right = pavolume memory cpu temperature battery1 battery2
+;modules-right = pavolume memory cpu temperature battery1 battery2
+modules-right = pavolume memory cpu temperature
 
 cursor-click = default
 cursor-scroll = default
@@ -323,11 +325,11 @@ warn-temperature = 60
 format = <ramp> <label>
 ;format-underline = ${colors.foreground}
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${colors.foreground}
+;format-warn-underline = ${colors.foreground}
 
 label = " Temp: %temperature-c%  "
 label-warn = " Temp: %temperature-c%  "
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.foreground}
 label-font = 4
 label-warn-font = 4
 
