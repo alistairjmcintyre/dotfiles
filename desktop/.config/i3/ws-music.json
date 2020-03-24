@@ -1,13 +1,13 @@
 {
     "border": "normal",
     "floating": "auto_off",
-    "layout": "splith",
-    "percent": 0.85,
+    "layout": "splitv",
+    "percent": 0.65,
     "type": "con",
     "nodes": [
         {
             "border": "pixel",
-            "current_border_width": 0,
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
                "height": 600,
@@ -16,7 +16,7 @@
                "y": 0
             },
             "name": "Spotify Premium",
-            "percent": 0.75,
+            "percent": 0.8,
             "swallows": [
                {
                "class": "^Spotify$",
@@ -26,75 +26,75 @@
             "type": "con"
         },
         {
-            "border": "normal",
+            "border": "pixel",
+            "current_border_width": 1,
             "floating": "auto_off",
-            "layout": "splitv",
-            "percent": 0.25,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "pixel",
-                    "current_border_width": 0,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 553,
-                       "width": 2727,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Volume Control",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                       "class": "^Pavucontrol$",
-                       "instance": "^pavucontrol$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "pixel",
-                    "current_border_width": 0,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 1348,
-                       "width": 1137,
-                       "x": 1151,
-                       "y": 46
-                    },
-                    "name": "Bluetooth Devices",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                       "class": "^Blueman\\-manager$",
-                       "instance": "^blueman\\-manager$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+            "geometry": {
+               "height": 404,
+               "width": 580,
+               "x": 0,
+               "y": 0
+            },
+            "name": "x-terminal-emulator",
+            "percent": 0.2,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^x\\-terminal\\-emulator$"
+               }
+            ],
+            "type": "con"
         }
     ]
 }
 
 {
-    "border": "pixel",
-    "current_border_width": 0,
+    "border": "normal",
     "floating": "auto_off",
-    "geometry": {
-       "height": 404,
-       "width": 580,
-       "x": 0,
-       "y": 0
-    },
-    "name": "x-terminal-emulator",
-    "percent": 0.15,
-    "swallows": [
-       {
-       "class": "^URxvt$",
-       "instance": "^x\\-terminal\\-emulator$"
-       }
-    ],
-    "type": "con"
+    "layout": "splitv",
+    "percent": 0.35,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1348,
+               "width": 1137,
+               "x": 1151,
+               "y": 46
+            },
+            "name": "Bluetooth Devices",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Blueman\\-manager$",
+               "instance": "^blueman\\-manager$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1179,
+               "width": 1135,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Volume Control",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Pavucontrol$",
+               "instance": "^pavucontrol$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
 }
 

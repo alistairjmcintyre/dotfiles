@@ -61,7 +61,7 @@ URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
-URxvt.font: xft:Inconsolata\ Nerd\ Font\ Mono:medium:size=11
+URxvt.font: xft:Liberation\ Mono\ for\ Powerline:size=9:antialias=true
 URxvt.letterSpace: -1
 
 ! Disable printing the terminal contents when pressing PrintScreen.
@@ -84,4 +84,4 @@ URxvt.internalBorder: 10
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-Xcursor.size: 16
+Xcursor.size: 12

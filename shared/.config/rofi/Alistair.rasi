@@ -28,7 +28,7 @@
     selected-normal-background:  rgba ( 220, 220, 220, 100 % );
     border-color:                @foreground;
     spacing:                     1;
-    separatorcolor:              rgba ( 46, 146, 226, 100 % );
+    separatorcolor:              rgba ( 99, 99, 99, 100 % );
     urgent-background:           rgba ( 39, 40, 34, 0 % );
     selected-urgent-background:  rgba ( 249, 38, 114, 100 % );
     alternate-urgent-foreground: @urgent-foreground;
@@ -41,7 +41,7 @@
     background-color: @background;
     border-color: @border;
     text-color: @text-color;
-    border:           1;
+    border:           4;
     padding:          20;
 }
 #mainbox {
@@ -58,7 +58,7 @@
 }
 #listview {
     fixed-height: 0;
-    border:       1px 0px 0px ;
+    border:       4px 0px 0px ;
     border-color: @separatorcolor;
     spacing:      5px ;
     scrollbar:    true;
