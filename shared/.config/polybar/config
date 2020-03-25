@@ -3,11 +3,11 @@
 ; Alistair McIntyre 2020
 ;-----------------------------------------------------------------------------;
 [colors]
-bar-bg = #ddd3d3d3
-bar-bg-alt = #fff
-bar-outline = #aa3d3d3d
-text = #ff5c5c5c
-text-alt = #aa999999
+bar-bg = #3d3d3d
+bar-bg-alt = #dfdfdf
+bar-outline = #3d3d3d
+text = #dfdfdf
+text-alt = #3d3d3d
 i3-selected-workspace = #dda1a1a1
 secondary = #aa66D9EF
 primary = #aa66D9EF
@@ -24,19 +24,19 @@ compositing-bg = xor
 ;-----------------------------------------------------------------------------;
 [bar/top]
 ;Layout
-height = 22
+width = 100%:-40
+height = 28
 fixed-center = true
-padding-left = 1
-padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
+offset-x = 20
+offset-y = 10
+module-margin = 0
 
 ;Styling
-background = ${colors.bar-bg}
+background = false
 foreground = ${colors.text}
-line-size = 3
+line-size = 0
 line-color = ${colors.bar-outline}
-border-bottom-size = 4
+border-bottom-size = 0
 border-bottom-color = ${colors.bar-outline}
 
 ; WM Specific things
@@ -47,27 +47,15 @@ scroll-down = i3wm-wsprev
 
 ; Fonts
 font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=10:antialias=true;3
+font-1 = Font Awesome 5 Free Solid:pixelsize=10;3
 
 ; Module configuration
-;modules-left = i3
-;modules-center = player-mpris-tail
-;modules-right = pavolume memory cpu temperature battery1 battery2 date dock eth wifi vpn
-;modules-right = pavolume memory cpu temperature date
-modules-left = i3
-modules-center = player-mpris-tail
-modules-right = pavolume memory cpu date
+modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume
+modules-center = i3
+modules-right = memory memory-icon spacer cpu cpu-icon spacer date date-icon
 
 ; Tray
 tray-position = none
-tray-padding = 5
-tray-background = ${colors.bar-bg}
-tray-transparent = true
-tray-detached = true
-tray-maxsize = 14
-tray-offset-x = 400
-tray-offset-y = -12
-cursor-click = default
-cursor-scroll = default
 ;-----------------------------------------------------------------------------;
 [module/i3]
 type = internal/i3
@@ -89,25 +77,43 @@ ws-icon-9 = 10;0
 ; mode
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+;label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${colors.i3-selected-workspace}
+label-focused-background = ${colors.bar-bg}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
+label-unfocused-background = ${colors.bar-bg-alt}
+label-unfocused-foreground = ${colors.text-alt}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-backgroundg = ${colors.i3-selected-workspace}
+label-visible-background = ${colors.bar-bg}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
+;-----------------------------------------------------------------------------;
+[module/spacer]
+type = custom/text
+content = ""
+content-background = ${colors.transparent}
+content-foreground = ${colors.transparent}
+content-padding = 0
+label-font = 2
+;-----------------------------------------------------------------------------;
+[module/headphones-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
 ;-----------------------------------------------------------------------------;
 [module/player-mpris-tail]
 type = custom/script
@@ -115,14 +121,28 @@ exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{title} - {artist}'
 scroll-up = ~/.config/polybar/scripts/player-mpris-tail.py previous
 scroll-down = ~/.config/polybar/scripts/player-mpris-tail.py next
 tail = true
-label = %output%
+label-padding = 3
+label = " %output% "
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
 click-middle = exec playerctl play-pause
 label-font = 1
+;-----------------------------------------------------------------------------;
+[module/volume-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
 ;-----------------------------------------------------------------------------;
 [module/pavolume]
 type = custom/script
 tail = true
-label = " %output%  "
+label = %output%
+label-padding = 3
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
 exec = ~/.config/polybar/scripts/pavolume.sh --listen
 click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
@@ -132,21 +152,49 @@ format-foreground = ${colors.text}
 format-bg = ${colors.bg}
 label-font = 1
 ;-----------------------------------------------------------------------------;
+[module/cpu-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
+;-----------------------------------------------------------------------------;
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
 format-prefix-foreground = ${colors.text-alt}
-label = " CPU: %percentage:2%%  "
+label = %percentage:2%%
 label-font = 1
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
+label-padding = 2
+;-----------------------------------------------------------------------------;
+[module/memory-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
 ;-----------------------------------------------------------------------------;
 [module/memory]
 type = internal/memory
-interval = 2
-format-prefix = " "
+interval = 1
 format-prefix-foreground = ${colors.text-alt}
-label = " Mem: %percentage_used%%  "
+label = %percentage_used%%
 label-font = 1
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
+label-padding = 3
+;-----------------------------------------------------------------------------;
+[module/date-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
 ;-----------------------------------------------------------------------------;
 [module/date]
 type = internal/date
@@ -157,5 +205,8 @@ time = %I:%M %P
 time-alt = %H:%M:%S
 format-prefix = 
 format-prefix-foreground = ${colors.text-alt}
-label = " It is %time% on %date%   "
-label-font = 4
+label = "It is %time% on %date%"
+label-font = 1
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
+label-padding = 3

@@ -156,7 +156,8 @@ gaps top 34
 gaps horizontal 10
 
 # Enable compositor
-exec compton --blur-background &
+exec_always --no-startup-id killall -q compton
+exec_always --no-startup-id compton &
 # Enable polybar
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Set wallpaper
