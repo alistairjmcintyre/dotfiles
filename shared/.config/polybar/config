@@ -24,10 +24,10 @@ compositing-bg = xor
 ;-----------------------------------------------------------------------------;
 [bar/top]
 ;Layout
-width = 100%:-40
+width = 100%:-20
 height = 28
 fixed-center = true
-offset-x = 20
+offset-x = 10
 offset-y = 10
 module-margin = 0
 
@@ -52,7 +52,7 @@ font-1 = Font Awesome 5 Free Solid:pixelsize=10;3
 ; Module configuration
 modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume
 modules-center = i3
-modules-right = memory memory-icon spacer cpu cpu-icon spacer date date-icon
+modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon
 
 ; Tray
 tray-position = none
@@ -82,13 +82,13 @@ label-mode-foreground = #000
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-background = ${colors.bar-bg}
-label-focused-padding = 2
+label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
 label-unfocused-background = ${colors.bar-bg-alt}
 label-unfocused-foreground = ${colors.text-alt}
-label-unfocused-padding = 2
+label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
@@ -97,7 +97,7 @@ label-visible-background = ${colors.bar-bg}
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 ;-----------------------------------------------------------------------------;
 [module/spacer]
 type = custom/text
@@ -210,3 +210,58 @@ label-font = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
 label-padding = 3
+;-----------------------------------------------------------------------------;
+[module/network-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
+;-----------------------------------------------------------------------------;
+[module/network]
+type = internal/network
+interface = enp0s31f6
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices like USB network adapters have 
+; an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+
+label-font = 1
+
+label-connected = %local_ip%
+label-connected-foreground = ${colors.text}
+label-connected-background = ${colors.bar-bg}
+label-connected-padding = 3
+
+label-disconnected = Disconnected
+label-disconnected-foreground = ${colors.text}
+label-disconnected-background = ${colors.bar-bg}
+label-disconnected-padding = 3
+;-----------------------------------------------------------------------------;
+[module/vpn-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
+;-----------------------------------------------------------------------------;
+[module/vpn]
+type = custom/script
+tail = true
+label = %output%
+label-padding = 3
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
+exec = ~/.config/polybar/scripts/vpn-up.sh
+format-foreground = ${colors.text}
+format-bg = ${colors.bg}
+label-font = 1
+interval = 3
