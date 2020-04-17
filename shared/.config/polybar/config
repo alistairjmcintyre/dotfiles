@@ -3,7 +3,7 @@
 ; Alistair McIntyre 2020
 ;-----------------------------------------------------------------------------;
 [colors]
-bar-bg = #3d3d3d
+bar-bg = #cd3d3d
 bar-bg-alt = #dfdfdf
 bar-outline = #3d3d3d
 text = #dfdfdf
@@ -48,9 +48,12 @@ scroll-down = i3wm-wsprev
 ; Fonts
 font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=10:antialias=true;3
 font-1 = Font Awesome 5 Free Solid:pixelsize=10;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
+font-3 = Font Awesome 5 Brands:pixelsize=10;3 
+
 
 ; Module configuration
-modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume
+modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume spacer rsync-icon rsync
 modules-center = i3
 modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon
 
@@ -63,16 +66,6 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 10;0
 
 ; mode
 label-mode-padding = 2
@@ -80,22 +73,22 @@ label-mode-foreground = #000
 ;label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %name%
 label-focused-background = ${colors.bar-bg}
 label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
+label-unfocused = %name%
 label-unfocused-background = ${colors.bar-bg-alt}
 label-unfocused-foreground = ${colors.text-alt}
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible = %name%
 label-visible-background = ${colors.bar-bg}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 ;-----------------------------------------------------------------------------;
@@ -265,3 +258,24 @@ format-foreground = ${colors.text}
 format-bg = ${colors.bg}
 label-font = 1
 interval = 3
+;-----------------------------------------------------------------------------;
+[module/rsync-icon]
+type = custom/text
+content = 
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 2
+label-font = 2
+;-----------------------------------------------------------------------------;
+[module/rsync]
+type = custom/script
+tail = true
+label = %output%
+label-padding = 3
+label-background = ${colors.bar-bg}
+label-foreground = ${colors.text}
+exec = ~/.config/polybar/scripts/rsync-in-progress.sh
+format-foreground = ${colors.text}
+format-bg = ${colors.bg}
+label-font = 1
+interval = 10

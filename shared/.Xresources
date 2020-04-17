@@ -49,39 +49,4 @@
 *.color20:      base04
 *.color21:      base06
 
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-URxvt.secondaryWheel: 1
-URxvt.font: xft:Liberation\ Mono\ for\ Powerline:size=9:antialias=true
-URxvt.letterSpace: -1
-
-! Disable printing the terminal contents when pressing PrintScreen.
-URxvt.print-pipe: "cat > /dev/null"
-URxvt.perl-ext-common: default,matcher,clipboard,url-select
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-
-URxvt.clipboard.autocopy: true
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-URxvt.scrollBar: false
-URxvt.internalBorder: 10
-
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
 Xcursor.size: 12
