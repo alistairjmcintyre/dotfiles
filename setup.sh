@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PWD=$(pwd)
+CONFIGDIR=/home/${USER}/.config
 
 function symlink() {
     action=$1
@@ -15,8 +16,11 @@ function symlink() {
     fi
 }
 
-symlink "replace" /compton/compton.conf /home/${USER}/.config/compton.conf
-symlink "replace" /i3                   /home/${USER}/.config/i3
-symlink "replace" /dunst                /home/${USER}/.config/dunst
-symlink "replace" /rofi                 /home/${USER}/.config/rofi
-symlink "replace" /polybar              /home/${USER}/.config/polybar
+symlink "replace" /.Xresources           /home/${USER}/.Xresources
+symlink "replace" /compton/compton.conf ${CONFIGDIR}/compton.conf
+symlink "replace" /i3                   ${CONFIGDIR}/i3
+symlink "replace" /dunst                ${CONFIGDIR}/dunst
+symlink "replace" /rofi                 ${CONFIGDIR}/rofi
+symlink "replace" /polybar              ${CONFIGDIR}/polybar
+symlink "replace" /powerline/config     ${CONFIGDIR}/powerline
+symlink "replace" /gotop                ${CONFIGDIR}/gotop

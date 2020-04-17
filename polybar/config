@@ -49,11 +49,11 @@ scroll-down = i3wm-wsprev
 font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=10:antialias=true;3
 font-1 = Font Awesome 5 Free Solid:pixelsize=10;3
 font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-3 = Font Awesome 5 Brands:pixelsize=10;3 
+font-3 = Font Awesome 5 Brands:pixelsize=10;3
 
 ; Tray
 tray-position = none
-
+;-----------------------------------------------------------------------------;
 [bar/senna]
 inherit = bar/base
 

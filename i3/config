@@ -109,8 +109,8 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec playerctl stop
-bindsym XF86AudioRaiseVolume exec ~/.config/i3/volumes.sh +5%
-bindsym XF86AudioLowerVolume exec ~/.config/i3/volumes.sh -5%
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volumes.sh +5%
+bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volumes.sh -5%
 bindsym XF86AudioMute exec playerctl mute
 
 # i3 config
