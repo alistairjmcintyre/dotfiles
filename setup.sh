@@ -16,3 +16,7 @@ function symlink() {
 }
 
 symlink "replace" /compton/compton.conf /home/${USER}/.config/compton.conf
+symlink "replace" /i3                   /home/${USER}/.config/i3
+symlink "replace" /dunst                /home/${USER}/.config/dunst
+symlink "replace" /rofi                 /home/${USER}/.config/rofi
+symlink "replace" /polybar              /home/${USER}/.config/polybar

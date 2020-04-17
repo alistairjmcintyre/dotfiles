@@ -1,0 +1,134 @@
+
+* {
+    background:                  rgba ( 239, 239, 239, 95 % );
+    border:                      rgba ( 10, 10, 10, 93 % );
+    text-color:                  rgba ( 10, 10, 10, 100 %);
+    selected-normal-foreground:  rgba ( 248, 248, 242, 100 % );
+    foreground:                  rgba ( 248, 248, 242, 100 % );
+    normal-foreground:           @foreground;
+    alternate-normal-background: rgba ( 39, 40, 34, 0 % );
+    red:                         rgba ( 220, 50, 47, 100 % );
+    selected-urgent-foreground:  rgba ( 220, 220, 220, 100 % );
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    urgent-foreground:           rgba ( 249, 38, 114, 100 % );
+    alternate-urgent-background: rgba ( 39, 40, 34, 0 % );
+    active-foreground:           rgba ( 166, 226, 42, 100 % );
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    selected-active-foreground:  rgba ( 220, 220, 220, 100 % );
+    alternate-active-background: rgba ( 220, 220, 220, 100% );
+    bordercolor:                 rgba ( 0, 43, 54, 100 % );
+    alternate-normal-foreground: @foreground;
+    normal-background:           rgba ( 39, 40, 34, 0 % );
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    selected-normal-background:  rgba ( 220, 220, 220, 100 % );
+    border-color:                @foreground;
+    spacing:                     1;
+    separatorcolor:              rgba ( 99, 99, 99, 100 % );
+    urgent-background:           rgba ( 39, 40, 34, 0 % );
+    selected-urgent-background:  rgba ( 249, 38, 114, 100 % );
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    alternate-active-foreground: @active-foreground;
+    active-background:           rgba ( 39, 40, 34, 0 % );
+    selected-active-background:  rgba ( 20, 20, 17, 100 % );
+}
+#window {
+    background-color: @background;
+    border-color: @border;
+    text-color: @text-color;
+    border:           2;
+    padding:          20;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @text-color;
+}
+#listview {
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      5px ;
+    scrollbar:    true;
+    padding:      10px 0px 0px 6px ;
+}
+#element {
+    border:  0;
+    padding: 10px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @text-color;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @text-color;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @text-color;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @text-color;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @text-color;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @text-color;
+}
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @text-color;
+}
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @text-color;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @text-color;
+}
+#scrollbar {
+    width:        0px ;
+    border:       0;
+    handle-width: 0px ;
+    padding:      0;
+    enabled:      false;
+}
+#sidebar {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @text-color;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @text-color;
+    padding:    0px 10px 10px 10px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @text-color;
+}
+#entry {
+    spacing:    5;
+    text-color: @text-color;
+}
+#prompt {
+    spacing:    3;
+    enabled:    false;
+    text-color: @text-color;
+}

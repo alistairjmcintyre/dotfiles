@@ -1,0 +1,156 @@
+#==============================================================================#
+# i3 config file                                                               #
+#                                                                              #
+# See https://i3wm.org/docs/userguide.html for                                 #
+# a complete reference!                                                        #
+#==============================================================================#
+
+
+
+#=== VARIABLES ================================================================#
+# Modifiers
+set $mod Mod1
+set $super Mod4
+
+# Workspace identifiers
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+
+
+#=== STYLING ==================================================================#
+# Title Bar Font (doesn't really get used by this config)
+font pango:Fira Code 8
+
+# Window borders
+client.focused #000000 #000000 #000000 #000000 #CD3D3D
+for_window [class=".*"] border pixel 2
+
+# Gaps
+gaps horizontal 0
+gaps inner 10
+gaps top 38
+gaps bottom 0
+
+
+
+#=== BINDINGS =================================================================#
+# Switching Workspaces
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move window to WorkSpace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Rofi
+bindsym $mod+d exec --no-startup-id "rofi -show drun -display-run \\">>> :\\""
+
+# Terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+#i3Lock
+bindsym $super+l exec ~/.config/i3/scripts/screen_lock.sh suspend
+bindsym $mod+l exec ~/.config/i3/scripts/screen_lock.sh lock
+
+# Windows
+## Move floating window
+floating_modifier $mod
+# Toggle Floating/Tiled
+bindsym $mod+Shift+space floating toggle
+# Kill focused window
+bindsym $mod+Shift+q kill
+# Change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# Move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# Set container split orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+# FullScreen toggle
+bindsym $mod+f fullscreen toggle
+# Container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
+
+# Media Keys
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/volumes.sh +5%
+bindsym XF86AudioLowerVolume exec ~/.config/i3/volumes.sh -5%
+bindsym XF86AudioMute exec playerctl mute
+
+# i3 config
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit \
+ shortcut.  Do you really want to exit i3? This will end your X session.' \
+ -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window mode
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym Left resize shrink width 1 px or 5 ppt
+        bindsym Down resize grow height 1 px or 5 ppt
+        bindsym Up resize shrink height 1 px or 5 ppt
+        bindsym Right resize grow width 1 px or 5 ppt
+
+        bindsym $mod+Left resize shrink width 2 px or 10 ppt
+        bindsym $mod+Down resize grow height 2 px or 10 ppt
+        bindsym $mod+Up resize shrink height 2 px or 10 ppt
+        bindsym $mod+Right resize grow width 2 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#=== WINDOW SPECIFICS =========================================================#
+# Spotify always lives on Workspace 2
+for_window [class="Spotify"] move to workspace number $ws2
+
+
+
+#=== INIT =====================================================================#
+exec --no-startup-id exec ~/.config/i3/init/once.sh
+exec_always --no-startup-id exec ~/.config/i3/init/always.sh
