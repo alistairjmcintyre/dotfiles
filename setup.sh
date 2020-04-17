@@ -24,3 +24,4 @@ symlink "replace" /rofi                 ${CONFIGDIR}/rofi
 symlink "replace" /polybar              ${CONFIGDIR}/polybar
 symlink "replace" /powerline/config     ${CONFIGDIR}/powerline
 symlink "replace" /gotop                ${CONFIGDIR}/gotop
+symlink "replace" /alacritty            ${CONFIGDIR}/alacritty
