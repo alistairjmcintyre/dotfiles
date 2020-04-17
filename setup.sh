@@ -16,7 +16,8 @@ function symlink() {
     fi
 }
 
-symlink "replace" /.Xresources           /home/${USER}/.Xresources
+symlink "replace" /.bashrc          /home/${USER}/.bashrc
+symlink "replace" /.Xresources          /home/${USER}/.Xresources
 symlink "replace" /compton/compton.conf ${CONFIGDIR}/compton.conf
 symlink "replace" /i3                   ${CONFIGDIR}/i3
 symlink "replace" /dunst                ${CONFIGDIR}/dunst
