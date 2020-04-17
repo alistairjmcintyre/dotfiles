@@ -90,3 +90,8 @@ function docker_clean() {
     # $1 = an image name
     docker images | grep $1 | awk '{ print $2; }' | xargs -t -i docker image rm ${1}:{}
 }
+
+if [[ -f /home/${USER}/.${HOSTNAME}rc ]]
+then
+  source /home/${USER}/.${HOSTNAME}rc
+fi

@@ -16,7 +16,7 @@ function symlink() {
     fi
 }
 
-symlink "replace" /.bashrc          /home/${USER}/.bashrc
+symlink "replace" /.bashrc              /home/${USER}/.bashrc
 symlink "replace" /.Xresources          /home/${USER}/.Xresources
 symlink "replace" /compton/compton.conf ${CONFIGDIR}/compton.conf
 symlink "replace" /i3                   ${CONFIGDIR}/i3
@@ -26,3 +26,4 @@ symlink "replace" /polybar              ${CONFIGDIR}/polybar
 symlink "replace" /powerline/config     ${CONFIGDIR}/powerline
 symlink "replace" /gotop                ${CONFIGDIR}/gotop
 symlink "replace" /alacritty            ${CONFIGDIR}/alacritty
+symlink "replace" /gtk                  /home/${USER}/.themes

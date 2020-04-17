@@ -4,7 +4,6 @@ GOAL:
   - keep everything the same for each system. Just adjust layout/variables on a per-system basis.
 
 TODO:
- - Alacritty
  - i3
     - environment specific pre-defined workspaces
     - Research ENV Vars
@@ -23,16 +22,5 @@ TODO:
  - Xresources
     - I need more work here
  - gotop (I would like this on all my machines plz)
-
-
-DONE:
- - compton
-   - Updated config to be more consistent.
- - i3
-   - Reformatted
- - dunst
-   - Reformatted
- - i3-workspaces-names-daemon
- - rofi
- - polybar
-   - Separate 'senna' bar
+ - .bashrc
+   Allow a per-machine include (for machine specific things, i.e for work)
