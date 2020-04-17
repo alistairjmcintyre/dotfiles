@@ -24,3 +24,10 @@ TODO:
  - gotop (I would like this on all my machines plz)
  - .bashrc
    Allow a per-machine include (for machine specific things, i.e for work)
+
+
+laptop specific:
+ - screenlayouts
+ - possibly adjust the polybar contents by primary scree nsize?
+ - Few apps need configuration
+ - update personal-scripts work repo to also reflect other things
