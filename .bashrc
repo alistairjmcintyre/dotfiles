@@ -93,5 +93,5 @@ function docker_clean() {
 
 if [[ -f /home/${USER}/.${HOSTNAME}rc ]]
 then
-  source /home/${USER}/.${HOSTNAME}rc
+  source /home/${USER}/.local-bashrc
 fi

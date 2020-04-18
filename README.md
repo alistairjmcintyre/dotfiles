@@ -1,33 +1,20 @@
-my dotfiles for everything
+Dotfiles
 
-GOAL:
-  - keep everything the same for each system. Just adjust layout/variables on a per-system basis.
+ - i3 (Tiling WM)
+ - Polybar (Status Bar)
+ - dunst (Notification Daemon)
+ - compton (X compositor)
+ - gotop (system monitor)
+ - gtk (GNOME/GTK themes)
+ - powerline (Bash Prompt)
+ - rofi (dmenu replacement)
+ - spicetify (Spotify theming)
+ - Alacritty (Terminal emulator)
 
 TODO:
- - i3
-    - environment specific pre-defined workspaces
-    - Research ENV Vars
-    - Re-configure polybar etc.
-    - test once.sh properly?
- - dunst
-    - Using ENV vars to specify the colors would be ideal
- - rofi
-    - Explore ENV Vars
-    - Look at further configuration
- - polybar
-    - define a 'alistairmcintyre-lp' bar from the base
-    - Can I use ENV vars?
- - powerline
-    - Somehow include the /usr/local/whatever shambles?
- - Xresources
-    - I need more work here
- - gotop (I would like this on all my machines plz)
- - .bashrc
-   Allow a per-machine include (for machine specific things, i.e for work)
-
-
-laptop specific:
- - screenlayouts
- - possibly adjust the polybar contents by primary scree nsize?
- - Few apps need configuration
- - update personal-scripts work repo to also reflect other things
+ - Configuration via env vars:
+   - dunst - Colors, sizing
+   - rofi - sizing
+   - i3 - pre-defined workspaces set per machine
+ - Include the configuration for powerline in /usr/share/
+ - Setup for all components via Ansible

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -f ~/.config/i3/init/hosts/${HOSTNAME}/always.sh ]];
+then
+    echo "test" >> ~/.testfile
+    source ~/.config/i3/init/hosts/${HOSTNAME}/always.sh
+fi
 
 function stop_proc() {
     killall -q $1
@@ -12,6 +17,8 @@ compton &
 stop_proc dunst
 dunst &
 
+echo $POLYBAR_ELEMENTS >> ~/.testfile
+
 stop_proc polybar
 polybar $HOSTNAME &
 
@@ -23,7 +30,3 @@ i3-workspace-names-daemon --delimiter " "
 feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | shuf -n 1)
 
 
-if [ -f "~/.config/i3/init/hosts/${HOSTNAME}/always.sh" ];
-then
-    source ~/.config/i3/init/hosts/${HOSTNAME}/always.sh
-fi
