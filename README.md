@@ -1,4 +1,4 @@
-Dotfiles
+## Dotfiles
 
  - i3 (Tiling WM)
  - Polybar (Status Bar)
@@ -11,7 +11,7 @@ Dotfiles
  - spicetify (Spotify theming)
  - Alacritty (Terminal emulator)
 
-TODO:
+#### Still todo
  - Configuration via env vars:
    - dunst - Colors, sizing
    - rofi - sizing
