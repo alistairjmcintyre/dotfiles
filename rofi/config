@@ -1,9 +1,9 @@
 rofi.modi:                             window,run,ssh,drun
-rofi.width:                            20
+rofi.width:                            30
 rofi.lines:                            4
 rofi.columns:                          1
 rofi.font:                             Fira Code 12
-rofi.bw:                               2
+rofi.bw:                               3
 rofi.location:                         0
 rofi.padding:                          75
 rofi.show-icons:                       false
