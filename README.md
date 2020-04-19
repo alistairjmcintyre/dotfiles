@@ -18,3 +18,5 @@
    - i3 - pre-defined workspaces set per machine
  - Include the configuration for powerline in /usr/share/
  - Setup for all components via Ansible
+ - symlink zshrc
+ - powerline colorscheme (make it consistent)

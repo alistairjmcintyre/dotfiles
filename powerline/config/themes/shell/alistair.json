@@ -11,23 +11,39 @@
 	},
 	"segments": {
 		"left": [
-				{
-						"function": "powerline.segments.shell.mode"
+			{
+				"function": "powerline.segments.common.net.hostname",
+				"args": {
+					"only_if_ssh": false,
+					"exclude_domain": true
 				},
-				{
-						"function": "powerline.segments.common.env.virtualenv",
-						"priority": 50
+				"priority": 10
+			},
+			{
+				"function": "powerline.segments.shell.mode"
+			},
+			{
+				"function": "powerline.segments.common.env.virtualenv",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.shell.cwd",
+				"args": {
+					"dir_shorten_len": 4,
+					"dir_limit_depth": 3
 				},
-				{
-						"function": "powerline.segments.shell.cwd",
-						"priority": 10
-				},
-				{
-						"function": "powerline.segments.common.vcs.branch",
-						"priority": 40
-				}
+				"priority": 10
+			}
 		],
 		"right": [
+			{
+				"function": "powerline_gitstatus.gitstatus",
+				"priority": 10
+			},
+			{
+				"function": "powerline.segments.common.vcs.branch",
+				"priority": 50
+			}
 		]
 	},
 	"spaces": 1,
@@ -43,7 +59,6 @@
 				"ellipsis": "…"
 			}
 		},
-
 		"line_current_symbol": {
 			"contents": " "
 		},
@@ -51,17 +66,30 @@
 			"args": {
 				"state_symbols": {
 					"fallback": "♫",
-					"play":     "▶",
-					"pause":    "▮▮",
-					"stop":     "■"
+					"play": "▶",
+					"pause": "▮▮",
+					"stop": "■"
 				}
 			}
 		},
-
+		"gitstatus": {
+			"args": {
+				"formats": {
+					"branch": "",
+					"tag": " ★ {}",
+					"behind": " ↓ {}",
+					"ahead": " ↑ {}",
+					"staged": " ● {}",
+					"unmerged": " ✖ {}",
+					"changed": " ✚ {}",
+					"untracked": " … {}",
+					"stashed": " ⚑ {}"
+				}
+			}
+		},
 		"time": {
 			"before": "⌚ "
 		},
-
 		"powerline.segments.common.net.network_load": {
 			"args": {
 				"recv_format": "⬇ {value:>8}",
@@ -69,7 +97,7 @@
 			}
 		},
 		"powerline.segments.common.net.hostname": {
-			"before": " "
+			"before": "@"
 		},
 		"powerline.segments.common.bat.battery": {
 			"args": {
@@ -91,18 +119,18 @@
 		"powerline.segments.common.wthr.weather": {
 			"args": {
 				"icons": {
-					"day":           "〇",
-					"blustery":      "⚑",
-					"rainy":         "☔",
-					"cloudy":        "☁",
-					"snowy":         "❅",
-					"stormy":        "☈",
-					"foggy":         "≡",
-					"sunny":         "☼",
-					"night":         "☾",
-					"windy":         "☴",
+					"day": "〇",
+					"blustery": "⚑",
+					"rainy": "☔",
+					"cloudy": "☁",
+					"snowy": "❅",
+					"stormy": "☈",
+					"foggy": "≡",
+					"sunny": "☼",
+					"night": "☾",
+					"windy": "☴",
 					"not_available": "�",
-					"unknown":       "⚠"
+					"unknown": "⚠"
 				}
 			}
 		},
@@ -111,32 +139,31 @@
 				"unicode_text": true
 			}
 		},
-
 		"powerline.segments.vim.mode": {
 			"args": {
 				"override": {
-					"n":  "NORMAL",
+					"n": "NORMAL",
 					"no": "N·OPER",
-					"v":  "VISUAL",
-					"V":  "V·LINE",
+					"v": "VISUAL",
+					"V": "V·LINE",
 					"^V": "V·BLCK",
-					"s":  "SELECT",
-					"S":  "S·LINE",
+					"s": "SELECT",
+					"S": "S·LINE",
 					"^S": "S·BLCK",
-					"i":  "INSERT",
+					"i": "INSERT",
 					"ic": "I·COMP",
 					"ix": "I·C-X ",
-					"R":  "RPLACE",
+					"R": "RPLACE",
 					"Rv": "V·RPLC",
 					"Rc": "R·COMP",
 					"Rx": "R·C-X ",
-					"c":  "COMMND",
+					"c": "COMMND",
 					"cv": "VIM·EX",
 					"ce": "NRM·EX",
-					"r":  "PROMPT",
+					"r": "PROMPT",
 					"rm": "-MORE-",
 					"r?": "CNFIRM",
-					"!":  "!SHELL"
+					"!": "!SHELL"
 				}
 			}
 		},
@@ -158,7 +185,6 @@
 				"text": "+"
 			}
 		},
-
 		"powerline.segments.i3wm.scratchpad": {
 			"args": {
 				"icons": {
