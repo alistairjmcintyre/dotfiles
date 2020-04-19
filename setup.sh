@@ -27,4 +27,5 @@ symlink "replace" /powerline/config     ${CONFIGDIR}/powerline
 symlink "replace" /gotop                ${CONFIGDIR}/gotop
 symlink "replace" /alacritty            ${CONFIGDIR}/alacritty
 symlink "replace" /gtk                  /home/${USER}/.themes
-symlink "replace" /spicetify		${CONFIGDIR}/spicetify/Themes
+symlink "replace" /spicetify		    ${CONFIGDIR}/spicetify/Themes
+symlink "replace" /.zshrc               /home/${USER}/.zshrc
