@@ -148,7 +148,8 @@ bindsym $mod+r mode "resize"
 #=== WINDOW SPECIFICS =========================================================#
 # Spotify always lives on Workspace 2
 for_window [class="Spotify"] move to workspace number $ws2
-
+for_window [class="Discord"] move to workspace number $ws1
+for_window [class="Steam"] move to workspace number $ws5
 
 
 #=== INIT =====================================================================#
