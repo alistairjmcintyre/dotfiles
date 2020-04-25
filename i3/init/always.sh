@@ -2,7 +2,6 @@
 
 if [[ -f ~/.config/i3/init/hosts/${HOSTNAME}/always.sh ]];
 then
-    echo "test" >> ~/.testfile
     source ~/.config/i3/init/hosts/${HOSTNAME}/always.sh
 fi
 
