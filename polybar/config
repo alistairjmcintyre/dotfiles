@@ -46,10 +46,10 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 ; Fonts
-font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=10:antialias=true;3
-font-1 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
-font-3 = Font Awesome 5 Brands:pixelsize=10;3
+font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=8:antialias=true;3
+font-1 = Font Awesome 5 Free Solid:pixelsize=8;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=8;3
+font-3 = Font Awesome 5 Brands:pixelsize=8;3
 
 ; Tray
 tray-position = none
