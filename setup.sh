@@ -29,3 +29,4 @@ symlink "replace" /alacritty            ${CONFIGDIR}/alacritty
 symlink "replace" /gtk                  /home/${USER}/.themes
 symlink "replace" /spicetify		    ${CONFIGDIR}/spicetify/Themes
 symlink "replace" /.zshrc               /home/${USER}/.zshrc
+symlink "replace" /.p10k.zsh            /home/${USER}/.p10k.zsh
