@@ -22,6 +22,10 @@
     "Steam": "steam",
     "pagraphcontrol": "project-diagram",
     "obs": "video",
+    "hamster-windows-service": "clock",
+    "keepassxc": "key",
+    "Hexchat": "comments",
+    "Gedit": "sticky-note",
     "_no_match": "question"
 }
 
