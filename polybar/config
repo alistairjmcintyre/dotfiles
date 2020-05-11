@@ -66,12 +66,12 @@ modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-ic
 [bar/alistairmcintyre-lp]
 inherit = bar/base
 ; Module configuration
-;modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume
+;modules-left = spacer volume-icon pavolume spacer headphones-icon player-mpris-tail
 ;modules-center = i3
-;modules-right = vpn vpn-icon wifi wifi-icon date date-icon
-modules-left = headphones-icon spacer player-mpris-tail spacer volume-icon pavolume
+;modules-right = vpn vpn-icon spacer wifi wifi-icon spacer date date-icon
+modules-left = spacer headphones-icon player-mpris-tail spacer volume-icon pavolume
 modules-center = i3
-modules-right = ${env:POLYBAR_ELEMENTS:date date-icon}
+modules-right = ${env:POLYBAR_ELEMENTS:date date-icon spacer}
 ;-----------------------------------------------------------------------------;
 [module/i3]
 type = internal/i3
