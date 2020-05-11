@@ -35,9 +35,9 @@ client.focused #CD3D3D #CD3D3D #CD3D3D #CD3D3D #CD3D3D
 for_window [class=".*"] border pixel 0
 
 # Gaps
-gaps horizontal 0
+gaps horizontal 20
 gaps inner 10
-gaps top 38
+gaps top 48
 gaps bottom 0
 
 

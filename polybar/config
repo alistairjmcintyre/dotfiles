@@ -3,41 +3,41 @@
 ; Alistair McIntyre 2020
 ;-----------------------------------------------------------------------------;
 [colors]
-bar-bg = #cd3d3d
-bar-bg-alt = #dfdfdf
+bar-bg = #aaffffff
+bar-bg-alt = #aaffffff
 bar-outline = #3d3d3d
-text = #dfdfdf
-text-alt = #3d3d3d
+text = #3d3d3d
+text-alt = #cd3d3d
 i3-selected-workspace = #dda1a1a1
 secondary = #aa66D9EF
 primary = #aa66D9EF
 alert = #ccFF7777
-transparent = #00000000
+transparent = #00dadada
 ;-----------------------------------------------------------------------------;
 [settings]
 screenchange-reload = true
-compositing-bg = xor
-;compositing-bg = screen
+;compositing-bg = xor
+compositing-bg = screen
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
 ;-----------------------------------------------------------------------------;
 [bar/base]
 ;Layout
-width = 100%:-20
-height = 24
+width = 100%:-60
+height = 26
 fixed-center = true
-offset-x = 10
+offset-x = 30
 offset-y = 10
 module-margin = 0
 
 ;Styling
-background = false
+background = #aaffffff
+border-color = #aaffffff
+border-size = 5
 foreground = ${colors.text}
 line-size = 0
 line-color = ${colors.bar-outline}
-border-bottom-size = 0
-border-bottom-color = ${colors.bar-outline}
 
 ; WM Specific things
 wm-restack = i3
@@ -47,9 +47,9 @@ scroll-down = i3wm-wsprev
 
 ; Fonts
 font-0 = Font Awesome 5 Free Solid:fontformat=truetype:size=8:antialias=true;2
-font-1 = Font Awesome 5 Free Solid:pixelsize=8;2
-font-2 = Font Awesome 5 Free Solid:pixelsize=8;2
-font-3 = Font Awesome 5 Brands:pixelsize=8;2
+font-1 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-3 = Font Awesome 5 Brands:pixelsize=9;2
 
 ; Tray
 tray-position = none
@@ -59,17 +59,17 @@ tray-position = none
 inherit = bar/base
 
 ; Module configuration
-modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume spacer
+modules-left = spacer volume-icon pavolume spacer headphones-icon player-mpris-tail
 modules-center = i3
-modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon
+modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon spacer
 ;-----------------------------------------------------------------------------;
 [bar/alistairmcintyre-lp]
 inherit = bar/base
 ; Module configuration
-;modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume spacer
+;modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume
 ;modules-center = i3
-;modules-right = vpn vpn-icon spacer wifi wifi-icon spacer date date-icon
-modules-left = headphones-icon player-mpris-tail spacer volume-icon pavolume spacer
+;modules-right = vpn vpn-icon wifi wifi-icon date date-icon
+modules-left = headphones-icon spacer player-mpris-tail spacer volume-icon pavolume
 modules-center = i3
 modules-right = ${env:POLYBAR_ELEMENTS:date date-icon}
 ;-----------------------------------------------------------------------------;
@@ -79,7 +79,6 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-
 ; mode
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -87,13 +86,14 @@ label-mode-foreground = #000
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.bar-bg}
+label-focused-background = ${colors.bar-bg-alt}
+label-focused-foreground = ${colors.text-alt}
 label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-background = ${colors.bar-bg-alt}
-label-unfocused-foreground = ${colors.text-alt}
+label-unfocused-background = ${colors.bar-bg}
+label-unfocused-foreground = ${colors.text}
 label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
@@ -108,18 +108,22 @@ label-urgent-padding = 3
 [module/spacer]
 type = custom/text
 content = ""
-content-background = ${colors.transparent}
+content-background = ${colors.bar-bg}
 content-foreground = ${colors.transparent}
 content-padding = 0
+label-font = 2
+;-----------------------------------------------------------------------------;
+[module/icon]
+type = custom/text
+content-background = ${colors.bar-bg-alt}
+content-foreground = ${colors.text-alt}
+content-padding = 1
 label-font = 2
 ;-----------------------------------------------------------------------------;
 [module/headphones-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/player-mpris-tail]
 type = custom/script
@@ -127,7 +131,7 @@ exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{title} - {artist}'
 scroll-up = ~/.config/polybar/scripts/player-mpris-tail.py previous
 scroll-down = ~/.config/polybar/scripts/player-mpris-tail.py next
 tail = true
-label-padding = 3
+label-padding = 1
 label = " %output% "
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
@@ -137,16 +141,13 @@ label-font = 5
 [module/volume-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/pavolume]
 type = custom/script
 tail = true
 label = %output%
-label-padding = 3
+label-padding = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
 exec = ~/.config/polybar/scripts/pavolume.sh --listen
@@ -161,10 +162,7 @@ label-font = 1
 [module/cpu-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/cpu]
 type = internal/cpu
@@ -174,15 +172,12 @@ label = %percentage:2%%
 label-font = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
-label-padding = 2
+label-padding = 1
 ;-----------------------------------------------------------------------------;
 [module/memory-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/memory]
 type = internal/memory
@@ -192,15 +187,12 @@ label = %percentage_used%%
 label-font = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
-label-padding = 3
+label-padding = 1
 ;-----------------------------------------------------------------------------;
 [module/date-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/date]
 type = internal/date
@@ -215,15 +207,12 @@ label = "It is %time% on %date%"
 label-font = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
-label-padding = 3
+label-padding = 1
 ;-----------------------------------------------------------------------------;
 [module/network-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/network]
 type = internal/network
@@ -244,20 +233,17 @@ label-font = 1
 label-connected = %local_ip%
 label-connected-foreground = ${colors.text}
 label-connected-background = ${colors.bar-bg}
-label-connected-padding = 3
+label-connected-padding = 1
 
 label-disconnected = Disconnected
 label-disconnected-foreground = ${colors.text}
 label-disconnected-background = ${colors.bar-bg}
-label-disconnected-padding = 3
+label-disconnected-padding = 1
 ;-----------------------------------------------------------------------------;
 [module/wifi-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/wifi]
 type = internal/network
@@ -278,26 +264,23 @@ label-font = 1
 label-connected = %local_ip%
 label-connected-foreground = ${colors.text}
 label-connected-background = ${colors.bar-bg}
-label-connected-padding = 3
+label-connected-padding = 1
 
 label-disconnected = Disconnected
 label-disconnected-foreground = ${colors.text}
 label-disconnected-background = ${colors.bar-bg}
-label-disconnected-padding = 3
+label-disconnected-padding = 1
 ;-----------------------------------------------------------------------------;
 [module/vpn-icon]
 type = custom/text
 content = 
-content-background = ${colors.bar-bg-alt}
-content-foreground = ${colors.text-alt}
-content-padding = 2
-label-font = 2
+inherit = module/icon
 ;-----------------------------------------------------------------------------;
 [module/vpn]
 type = custom/script
 tail = true
 label = %output%
-label-padding = 3
+label-padding = 1
 label-background = ${colors.bar-bg}
 label-foreground = ${colors.text}
 exec = ~/.config/polybar/scripts/vpn-up.sh
