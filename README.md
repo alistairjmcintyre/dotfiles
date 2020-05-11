@@ -12,6 +12,8 @@
  - Alacritty (Terminal emulator)
 
 #### Still todo
+ - Experiment with moving certain things to conky (CPU/Memory etc)
+ - Plymouth theming?
  - Configuration via env vars:
    - dunst - Colors, sizing
    - rofi - sizing

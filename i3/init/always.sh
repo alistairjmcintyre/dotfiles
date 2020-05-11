@@ -16,7 +16,7 @@ i3-workspace-names-daemon --delimiter " " &
 /usr/lib/gnome-settings-daemon/gsd-xsettings &
 # Set wallpaper
 feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | shuf -n 1) &
-
+feh --bg-fill ~/Pictures/Wallpapers/dbz.jpg &
 stop_proc compton
 compton &
 

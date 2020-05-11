@@ -53,6 +53,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=8;2
 
 ; Tray
 tray-position = none
+
 ;-----------------------------------------------------------------------------;
 [bar/senna]
 inherit = bar/base
