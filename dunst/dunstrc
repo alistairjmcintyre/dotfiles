@@ -2,7 +2,7 @@
 #=== DUNST ================================================#
 
 [global]
-font = Lato Regular 11
+font = DejaVu Sans Regular 8
 
 # Allows pango markup:
 markup = yes
@@ -54,7 +54,7 @@ hide_duplicates_count = yes
 #   [{width}]x{height}[+/-{x}+/-{y}]
 # The geometry of the message window.
 #geometry = "250x50-40+40"
-geometry = "600x85-10+48"
+geometry = "400x65-30+55"
 
 # Shrink window if it's smaller than the width.
 shrink = no
@@ -126,7 +126,7 @@ browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = right
-max_icon_size = 110
+max_icon_size = 65
 
 # Paths to default icons.
 icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
