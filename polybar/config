@@ -52,7 +52,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=9;2
 font-3 = Font Awesome 5 Brands:pixelsize=9;2
 
 ; Tray
-tray-position = none
+tray-position = right
 
 ;-----------------------------------------------------------------------------;
 [bar/senna]
@@ -61,7 +61,7 @@ inherit = bar/base
 ; Module configuration
 modules-left = spacer volume-icon pavolume spacer headphones-icon player-mpris-tail
 modules-center = i3
-modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon spacer
+modules-right = vpn vpn-icon spacer network network-icon spacer memory memory-icon spacer cpu cpu-icon spacer date date-icon
 ;-----------------------------------------------------------------------------;
 [bar/alistairmcintyre-lp]
 inherit = bar/base

@@ -9086,3 +9086,19 @@ treeview.view header box.vertical > stack > box.vertical > .raven-background > v
 @define-color budgie_tasklist_indicator_color_active #CD3D3D;
 @define-color budgie_tasklist_indicator_color_active_window #913d39;
 @define-color budgie_tasklist_indicator_color_attention #FF6D00;
+
+
+label.deadd-noti-center.notification.appname,
+image.deadd-noti-center.notification.icon {
+  opacity: 0;
+}
+
+image.deadd-noti-center.notification.image {
+  margin: 5px;
+  opacity: 0.8;
+}
+
+label.deadd-noti-center.notification.title,
+label.deadd-noti-center.notification.body {
+  margin-top: 7px;
+}

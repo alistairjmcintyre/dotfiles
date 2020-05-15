@@ -18,10 +18,14 @@ i3-workspace-names-daemon --delimiter " " &
 feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | shuf -n 1) &
 feh --bg-fill ~/Pictures/Wallpapers/dbz.jpg &
 stop_proc compton
-compton &
+compton --respect-prop-shadow &
 
-stop_proc dunst
-dunst &
+# consider dunst deprecated in favour of deadd
+# stop_proc dunst
+# dunst &
+
+stop_proc deadd-notification-center
+deadd-notification-center &
 
 stop_proc polybar
 polybar $HOSTNAME &

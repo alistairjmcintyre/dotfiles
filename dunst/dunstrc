@@ -54,14 +54,14 @@ hide_duplicates_count = yes
 #   [{width}]x{height}[+/-{x}+/-{y}]
 # The geometry of the message window.
 #geometry = "250x50-40+40"
-geometry = "400x65-30+55"
+geometry = "440x60-1500+45"
 
 # Shrink window if it's smaller than the width.
 shrink = no
 
 # The transparency of the window.  Range: [0; 100].
 # Requires a compositor
-transparency = 20
+transparency = 0
 
 # Don't remove messages, if the user is idle
 # for longer than idle_threshold seconds.
