@@ -42,6 +42,8 @@ gaps bottom 0
 
 
 
+bindsym $mod+grave exec --no-startup-id "kill -s USR1 $(pidof deadd-notification-center)"
+
 #=== BINDINGS =================================================================#
 # Switching Workspaces
 bindsym $mod+1 workspace number $ws1
