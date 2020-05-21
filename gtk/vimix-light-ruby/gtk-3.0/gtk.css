@@ -9102,3 +9102,8 @@ label.deadd-noti-center.notification.title,
 label.deadd-noti-center.notification.body {
   margin-top: 7px;
 }
+
+
+label.deadd-noti-center.noti-center.time {
+  margin-top: 10px;
+}
