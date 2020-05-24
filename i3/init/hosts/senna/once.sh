@@ -36,3 +36,5 @@ i3-msg "workspace number 1; append_layout ~/.config/i3/default_workspaces/senna/
 discord &
 alacritty -t "GOTOP" -e zsh -i -c '/usr/local/bin/gotop -c monokai -l senna' &
 evolution &
+
+conky &
