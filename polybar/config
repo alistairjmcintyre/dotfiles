@@ -71,7 +71,7 @@ inherit = bar/base
 ;modules-right = vpn vpn-icon spacer wifi wifi-icon spacer date date-icon
 modules-left = spacer headphones-icon player-mpris-tail spacer volume-icon pavolume
 modules-center = i3
-modules-right = ${env:POLYBAR_ELEMENTS:date date-icon spacer}
+modules-right = date date-icon spacer
 ;-----------------------------------------------------------------------------;
 [module/i3]
 type = internal/i3
