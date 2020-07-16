@@ -31,3 +31,4 @@ symlink "replace" /spicetify		    ${CONFIGDIR}/spicetify/Themes
 symlink "replace" /.zshrc               /home/${USER}/.zshrc
 symlink "replace" /.p10k.zsh            /home/${USER}/.p10k.zsh
 symlink "replace" /conky                ${CONFIGDIR}/conky
+symlink "replace" /glava		${CONFIGDIR}/glava
