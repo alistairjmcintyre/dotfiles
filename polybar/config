@@ -3,12 +3,12 @@
 ; Alistair McIntyre 2020
 ;-----------------------------------------------------------------------------;
 [colors]
-bar-bg = #aaffffff
-bar-bg-alt = #aaffffff
+bar-bg = #00ffffff
+bar-bg-alt = #00ffffff
 bar-outline = #3d3d3d
-text = #3d3d3d
-text-alt = #cd3d3d
-i3-selected-workspace = #dda1a1a1
+text = #77d3d3d3
+text-alt = #cdcdcd
+i3-selected-workspace = #dd
 secondary = #aa66D9EF
 primary = #aa66D9EF
 alert = #ccFF7777
@@ -32,8 +32,8 @@ offset-y = 10
 module-margin = 0
 
 ;Styling
-background = #aaffffff
-border-color = #aaffffff
+background = #00ffffff
+border-color = #00ffffff
 border-size = 5
 foreground = ${colors.text}
 line-size = 0
@@ -59,9 +59,9 @@ tray-position = right
 inherit = bar/base
 
 ; Module configuration
-modules-left = spacer volume-icon pavolume spacer headphones-icon player-mpris-tail
+;modules-left = spacer volume-icon pavolume spacer headphones-icon player-mpris-tail
 modules-center = i3
-modules-right = date date-icon
+;modules-right = date date-icon
 ;-----------------------------------------------------------------------------;
 [bar/alistairmcintyre-lp]
 inherit = bar/base

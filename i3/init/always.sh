@@ -33,5 +33,14 @@ polybar $HOSTNAME &
 
 stop_proc conky
 conky &
+conky -c ~/.config/conky/np.lua &
+sleep 2 &
+conky -c ~/.config/conky/npart.lua &
+sleep 2 &
+WEATHER_API_KEY=545c874024b390a54c4ea1e29b78d82e conky -c ~/.config/conky/weather.conf &
+sleep 2 &
+exec ~/.config/conky/start.sh &
 
+stop_proc glava
+glava --desktop
 
