@@ -32,12 +32,12 @@ font pango:Fira Code 8
 
 # Window borders
 client.focused #CD3D3D #CD3D3D #CD3D3D #CD3D3D #CD3D3D
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 
 # Gaps
-gaps horizontal 20
+gaps horizontal 10
 gaps inner 10
-gaps top 48
+gaps top 23
 gaps bottom 0
 
 

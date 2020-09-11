@@ -87,8 +87,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   #multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
 
 # Spaces per Tab (changes require restart)
 #
@@ -97,7 +95,6 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-tabspaces: 4
 
 # Font configuration
 font:
@@ -217,25 +214,25 @@ colors:
 
   # Normal colors
   normal:
-   black:   '#272822'
-   red:     '#F92672'
-   green:   '#A6E22E'
-   yellow:  '#F4BF75'
-   blue:    '#66D9EF'
-   magenta: '#AE81FF'
-   cyan:    '#A1EFE4'
-   white:   '#F8F8F2'
+   black:   '0x000000'
+   red:     '0xcd3d3d'
+   green:   '0x7a8530'
+   yellow:  '0x97822e'
+   blue:    '0x506d8f'
+   magenta: '0x80638e'
+   cyan:    '0x497e7a'
+   white:   '0x9a9a9a'
 
-  # Bright colors
-  bright:
-   black:   '#75715E'
-   red:     '#F92672'
-   green:   '#A6E22E'
-   yellow:  '#F4BF75'
-   blue:    '#66D9EF'
-   magenta: '#AE81FF'
-   cyan:    '#A1EFE4'
-   white:   '#F9F8F5'
+  # # Bright colors
+  # bright:
+  #  black:   '#75715E'
+  #  red:     '#F92672'
+  #  green:   '#A6E22E'
+  #  yellow:  '#F4BF75'
+  #  blue:    '#66D9EF'
+  #  magenta: '#AE81FF'
+  #  cyan:    '#A1EFE4'
+  #  white:   '#F9F8F5'
 
   # Dim colors
   #

@@ -34,7 +34,7 @@
               Has very little performance impact.
     
    "none"   - Disable window opacity completely. */
-#request setopacity "native"
+#request setopacity "xroot"
 
 /* Whether to average and mirror left and right audio input channels.
    This may cause some modules to only render a single channel. */
@@ -49,7 +49,7 @@
 #request settitle "GLava"
 
 /* Window geometry (x, y, width, height) */
-#request setgeometry 420 250 2600 900
+#request setgeometry 0 250 3440 900
 
 /* Window background color (RGBA format).
    Does not work with `setopacity "xroot"` */
