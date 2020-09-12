@@ -17,7 +17,7 @@ i3-workspace-names-daemon --delimiter " " &
 # Set wallpaper
 # feh --bg-fill ~/Pictures/Wallpapers/$(ls ~/Pictures/Wallpapers/ | shuf -n 1) &
 # feh --bg-fill ~/Pictures/Wallpapers/dbz.jpg &
-feh --bg-fill ~/Pictures/Wallpapers/wallhaven-ymp92k.jpg &
+feh --bg-fill ~/Pictures/Wallpapers/wallhaven-mppgmy.png &
 stop_proc compton
 compton --respect-prop-shadow &
 
@@ -35,8 +35,6 @@ stop_proc conky
 sleep 2 &
 bash -c "~/.config/conky/start.sh" &
 
-#stop_proc glava
-#glava --desktop
 
 stop_proc xob
 kill $(ps aux | grep '[p]ulse-volume-watcher' | cut -d " " -f 2)
