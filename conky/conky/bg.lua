@@ -18,11 +18,12 @@ conky.config = {
 
     background = true,
 
+
     -- Compositor settings
     own_window = true,
     own_window_argb_visual = true,
     own_window_argb_value = 150,
-	own_window_colour = '1d1d1d',
+    own_window_colour = '1d1d1d',
 
     own_window_transparent = false,
     own_window_hints = 'bottom,undecorated,below,sticky,skip_taskbar,skip_pager',

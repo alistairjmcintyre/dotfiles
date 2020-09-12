@@ -36,3 +36,12 @@ export LANG=en_US.UTF-8
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias gityolo='git commit --amend --no-edit && git push --force'
+alias gitallthebranches='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+
+[[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
+
+function newgitbranch() {
+    git branch $1 && git checkout $1
+}
