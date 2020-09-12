@@ -1,0 +1,72 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 224,
+       "width": 2314,
+       "x": 540,
+       "y": 1050
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "user_on",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "name": "vis",
+            "percent": 1,
+            "swallows": [
+               {
+               "class": "^Alacritty$",
+               "instance": "^Alacritty$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 104,
+       "width": 1332,
+       "x": 1030,
+       "y": 870
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "user_on",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "name": "The Dangerous Summer - Where Were You When The Sky Opened Up",
+            "percent": 1,
+            "swallows": [
+               {
+               "class": "^Spotify$",
+               "instance": "^spotify$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
