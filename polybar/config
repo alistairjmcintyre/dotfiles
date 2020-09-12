@@ -25,10 +25,10 @@ compositing-bg = screen
 [bar/base]
 ;Layout
 width = 100%:-60
-height = 11
+height = 14
 fixed-center = true
 offset-x = 30
-offset-y = 7
+offset-y = 6
 module-margin = 0
 
 ;Styling
@@ -102,7 +102,7 @@ label-visible-background = ${colors.bar-bg}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 3
 ;-----------------------------------------------------------------------------;
 [module/spacer]

@@ -95,7 +95,9 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-
+dpi: 
+  x: 168.0
+  y: 168.0
 # Font configuration
 font:
   # Normal (roman) font face
@@ -106,8 +108,9 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: MesloLGS NF
+    #family: MesloLGS NF
     #family: Go Mono for Powerline
+    family: Meslo LG S for Powerline
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -146,7 +149,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 8
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -184,8 +187,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0xf9f8f5'
-    foreground: '0x49483e'
+    background: '0xf0f0f0'
+    foreground: '0x000000'
 
     # Bright and dim foreground colors
     #
@@ -215,10 +218,10 @@ colors:
   # Normal colors
   normal:
    black:   '0x000000'
-   red:     '0xcd3d3d'
-   green:   '0x7a8530'
-   yellow:  '0x97822e'
-   blue:    '0x506d8f'
+   red:     '0xd73a49'
+   green:   '0x22863a'
+   yellow:  '0xe36209'
+   blue:    '0x005cc5'
    magenta: '0x80638e'
    cyan:    '0x497e7a'
    white:   '0x9a9a9a'
