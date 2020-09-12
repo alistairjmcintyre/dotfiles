@@ -70,7 +70,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Rofi
-bindsym $mod+d exec --no-startup-id "rofi -show drun -display-run \\">>> :\\""
+bindsym $mod+d exec --no-startup-id "rofi -theme ~/.config/rofi/themes/$(hostname).rasi -show drun -display-run \\">>> :\\""
 
 # Terminal
 bindsym $mod+Return exec i3-sensible-terminal

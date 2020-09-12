@@ -12,4 +12,3 @@ rofi.sidebar-mode:                     false
 rofi.eh:                               1
 rofi.hide-scrollbar:                   true
 rofi.fullscreen:                       true
-rofi.theme:                            /home/alistairmcintyre/.config/rofi/themes/laptop.rasi
