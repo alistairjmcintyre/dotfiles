@@ -36,3 +36,23 @@ export LANG=en_US.UTF-8
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias gityolo='git commit --amend --no-edit && git push --force'
+alias gitallthebranches='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+
+alias bastion='ssh -L 127.0.0.1:8888:localhost:8888 -J wlg-bounce.wgtn.cat-it.co.nz'
+alias st-bastion='bastion cat-giscore-staging-mgmt1'
+alias prod-bastion='bastion cat-giscore-prod-mgmt1'
+
+
+alias pview='echo "n" | ssh -J wlg-bounce.wgtn.cat-it.co.nz cat-prod-secret pview'
+alias kube-ctx='kubectl config use-context'
+alias kube-ctx-st='kube-ctx cat-giscore-staging1-super-admin'
+alias kube-ctx-prod='kube-ctx cat-giscore-prod1-super-admin'
+
+alias kube-proxy='export HTTP_PROXY=localhost:8888'
+
+
+function newgitbranch() {
+    git branch $1 && git checkout $1
+}

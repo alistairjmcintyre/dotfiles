@@ -35,8 +35,8 @@ stop_proc conky
 sleep 2 &
 bash -c "~/.config/conky/start.sh" &
 
-stop_proc glava
-glava --desktop
+#stop_proc glava
+#glava --desktop
 
 stop_proc xob
 kill $(ps aux | grep '[p]ulse-volume-watcher' | cut -d " " -f 2)
