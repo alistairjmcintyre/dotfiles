@@ -1,0 +1,9 @@
+# File for local commands and aliases
+wal -Rqe
+alias gityolo='git commit --amend --no-edit && git push --force'
+alias gitallthebranches='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+export EDITOR="/usr/bin/vim"
+
+function newgitbranch() {
+    git branch $1 && git checkout $1
+}

@@ -1,23 +1,18 @@
 ## Dotfiles
 
- - i3 (Tiling WM)
- - Polybar (Status Bar)
- - dunst (Notification Daemon)
- - compton (X compositor)
- - gotop (system monitor)
- - gtk (GNOME/GTK themes)
- - powerline (Bash Prompt)
- - rofi (dmenu replacement)
- - spicetify (Spotify theming)
- - Alacritty (Terminal emulator)
+ - WM: i3
+ - Status Bar: Polybar
+ - Notifications: dunst
+ - Compositor: picom/compton
+ - demnu/launcher: rofi
+ - Terminal: Alacritty
 
-#### Still todo
- - Experiment with moving certain things to conky (CPU/Memory etc)
- - Plymouth theming?
- - Configuration via env vars:
-   - dunst - Colors, sizing
-   - rofi - sizing
-   - i3 - pre-defined workspaces set per machine
- - Include the configuration for powerline in /usr/share/
- - Setup for all components via Ansible
- - powerline colorscheme (make it consistent)
+Fonts aren't included because I don't feel like getting this taken down for copyright.
+
+Configs:
+ - senna: my personal computer
+   os: Manjaro i3
+
+Screenshots:
+![senna-neofetch-image](screenshots/senna-neofetch.png)
+![senna-spotify-image](screenshots/senna-spotify.png)
