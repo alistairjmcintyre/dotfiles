@@ -2,40 +2,38 @@
 from pulsectl import Pulse, PulseLoopStop
 import sys
 
-DEFAULT_SINK=0
-sink_id = DEFAULT_SINK
 
-def get_active_sink(sinks):
-  for index, sink in enumerate(sinks, start=0):
-    if sink.state == 'running':
-      return index
-  return DEFAULT_SINK
+def get_active_sink(sinks, default_sink_name):
+  return [sink for sink in sinks if sink.name == default_sink_name][0]
 
-with Pulse() as pulse:
-  def callback(ev):
-    if ev.index == sink_id:
+
+def get_volume_value(pulse):
+  server_info = pulse.server_info()
+  sinks = pulse.sink_list()
+  active_sink = get_active_sink(sinks, server_info.default_sink_name)
+  return active_sink, round(active_sink.volume.value_flat * 100)
+
+
+def main():
+  with Pulse() as pulse:
+    sink = None
+    def callback(ev):
+      if ev.index == sink.index:
         raise PulseLoopStop
-  try:
-    pulse.event_mask_set('sink')
-    pulse.event_callback_set(callback)
-    sink_id = get_active_sink(pulse.sink_list())
-    sink = pulse.sink_list()[sink_id]
-    last_value = round(sink.volume.value_flat * 100)
-    last_mute = sink.mute == 1
-    while True:
-      pulse.event_listen()
-      sink_id = get_active_sink(pulse.sink_list())
-      sink = pulse.sink_list()[sink_id]
-      value = round(sink.volume.value_flat * 100)
-      mute = sink.mute == 1
-      if value != last_value or mute != last_mute:
-        print(value, end='')
-        if mute:
-            print('!')
-        else:
-            print('')
-        last_value = value
-        last_mute = mute
-      sys.stdout.flush()
-  except:
-    pass
+    try:
+      pulse.event_mask_set('sink')
+      pulse.event_callback_set(callback)
+      sink, last_value = get_volume_value(pulse)
+      while True:
+        pulse.event_listen()
+        sink, value = get_volume_value(pulse)
+        if value != last_value:
+          print(value)
+          last_value = value
+        sys.stdout.flush()
+    except:
+      pass
+
+
+if __name__ == "__main__":
+  main()
